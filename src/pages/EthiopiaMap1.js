@@ -3,7 +3,7 @@ import { Card } from "antd";
 import { ReactComponent as EthiopiaMaps } from "./EthiopiaMap.svg";
 import "./MapStyle.css";
 
-const MapComponent = ({ regionsData }) => {
+const EthiopiaMap1 = ({ regionsData }) => {
   const [selectedRegion, setSelectedRegion] = useState(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const MapComponent = ({ regionsData }) => {
 
         // Mouse enter: Update selected region
         regionElement.addEventListener("mouseenter", () => {
-          setSelectedRegion({ name: title, data, color });
+          setSelectedRegion({ title,regionName, data, color });
         });
       }
     });
@@ -44,19 +44,21 @@ const MapComponent = ({ regionsData }) => {
       {/* Selected Region Info Display */}
       {selectedRegion && (
         <Card
-          title={selectedRegion.name}
+          title={selectedRegion.title}
           style={{
             marginTop: "20px",
-            width: 300,
+            width: 400,
             textAlign: "left",
             border: "1px solid #ddd",
             borderRadius: "10px",
             boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
           }}
         >
+          <strong>Type: {selectedRegion.title}</strong>
           <p>
-            <strong>Data:</strong> {selectedRegion.data}
+            <strong>Region:</strong> {selectedRegion.regionName}
           </p>
+          <strong>Data:</strong> {selectedRegion.data}
           <div
             style={{
               width: "100px",
@@ -68,8 +70,23 @@ const MapComponent = ({ regionsData }) => {
           ></div>
         </Card>
       )}
+      <Card
+        style={{
+          marginTop: "20px",
+          width: 400,
+          textAlign: "left",
+          border: "1px solid #ddd",
+          borderRadius: "10px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <h2>Regions</h2>
+        <div className="map-legend">
+          <p>lorem</p>
+        </div>
+      </Card>
     </div>
   );
 };
 
-export default MapComponent;
+export default EthiopiaMap1;

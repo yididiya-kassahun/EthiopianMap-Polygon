@@ -3,7 +3,7 @@ import { Tooltip } from "antd";
 import { ReactComponent as EthiopiaMaps } from "./EthiopiaMap.svg";
 import "./MapStyle.css";
 
-const MapComponent = ({ regionsData }) => {
+const EthiopiaMap2 = ({ regionsData }) => {
   const [tooltip, setTooltip] = useState({
     visible: false,
     text: "",
@@ -116,4 +116,4 @@ const MapComponent = ({ regionsData }) => {
   );
 };
 
-export default MapComponent;
+export default EthiopiaMap2;

@@ -1,9 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "antd";
+import "../MapStyle.css";
 import { ReactComponent as EthiopiaMaps } from "./EthiopiaMap.svg";
-import "./MapStyle.css";
 
-const EthiopiaMap1 = ({ regionsData }) => {
+const regionsData = [
+  { title: "Population", data: 85, regionName: "oromiya" },
+  { title: "Population", data: 65, regionName: "amhara" },
+  { title: "Population", data: 22, regionName: "tigray" },
+  { title: "Population", data: 56, regionName: "afar" },
+  { title: "Population", data: 45, regionName: "addisababa" },
+  { title: "Population", data: 33, regionName: "snprl" },
+  { title: "Population", data: 13, regionName: "harar" },
+  { title: "Population", data: 95, regionName: "somalia" },
+  { title: "Population", data: 58, regionName: "gambella" },
+  { title: "Population", data: 5, regionName: "benishangul" },
+];
+
+const EthiopiaMap1 = () => {
   const [selectedRegion, setSelectedRegion] = useState(null);
 
   useEffect(() => {
@@ -19,7 +32,7 @@ const EthiopiaMap1 = ({ regionsData }) => {
         });
       }
     });
-  }, [regionsData]);
+  }, []);
 
   const getColorBasedOnData = (data) => {
     if (data >= 90) return "#FF8800";

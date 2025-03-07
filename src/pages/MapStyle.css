@@ -8,6 +8,10 @@
   position: relative;
 }
 
+#regionList {
+  display: none;
+}
+
 .map-container [data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;

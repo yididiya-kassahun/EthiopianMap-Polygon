@@ -20,8 +20,8 @@ const regionsData = [
 function App() {
   return (
     <div className="App flex flex-row space-x-30 p-10 justify-center">
-      <EthiopiaMap1 regionsData={regionsData} />
-      <EthiopiaMap2 regionsData={regionsData} />
+      {/* <EthiopiaMap1 regionsData={regionsData} />
+      <EthiopiaMap2 regionsData={regionsData} /> */}
       <EthiopiaMap3 regionsData={regionsData} />
     </div>
   );

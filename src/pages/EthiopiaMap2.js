@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Tooltip } from "antd";
 import { ReactComponent as EthiopiaMaps } from "./EthiopiaMap.svg";
 import "./MapStyle.css";
 
 const EthiopiaMap2 = ({ regionsData }) => {
-  const [tooltip, setTooltip] = useState({
-    visible: false,
-    text: "",
-    x: 0,
-    y: 0,
-  });
   const [selectedRegion, setSelectedRegion] = useState(null); // State for selected region info
 
   useEffect(() => {
@@ -19,31 +12,11 @@ const EthiopiaMap2 = ({ regionsData }) => {
         const color = getColorBasedOnData(data);
         regionElement.style.fill = color;
 
-        // Mouse enter: Show tooltip & update selected region
-        regionElement.addEventListener("mouseenter", (e) => {
-          setTooltip({
-            visible: true,
-            text: `${title}: ${data}`,
-            x: e.clientX,
-            y: e.clientY,
-          });
-
-          setSelectedRegion({ name: title, data, color });
-        });
-
         // Mouse move: Update tooltip position
         regionElement.addEventListener("mousemove", (e) => {
-          setTooltip((prev) => ({
-            ...prev,
-            x: e.clientX,
-            y: e.clientY,
-          }));
+         
         });
 
-        // Mouse leave: Hide tooltip
-        regionElement.addEventListener("mouseleave", () => {
-          setTooltip((prev) => ({ ...prev, visible: false }));
-        });
       }
     });
   }, [regionsData]);
@@ -68,50 +41,7 @@ const EthiopiaMap2 = ({ regionsData }) => {
     >
       <EthiopiaMaps />
 
-      {/* Custom tooltip that follows the mouse */}
-      {tooltip.visible && (
-        <Tooltip title={tooltip.text} visible>
-          <div
-            style={{
-              position: "absolute",
-              left: tooltip.x + 10,
-              top: tooltip.y + 10,
-              backgroundColor: "rgba(0, 0, 0, 0.75)",
-              color: "white",
-              padding: "5px 10px",
-              borderRadius: "5px",
-              pointerEvents: "none",
-            }}
-          >
-            {tooltip.text}
-          </div>
-        </Tooltip>
-      )}
-
-      {/* Selected Region Info Display */}
-      {selectedRegion && (
-        <div
-          style={{
-            marginTop: "20px",
-            padding: "10px",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            display: "inline-block",
-          }}
-        >
-          <h3>{selectedRegion.name}</h3>
-          <p>Data: {selectedRegion.data}</p>
-          <div
-            style={{
-              width: "50px",
-              height: "20px",
-              backgroundColor: selectedRegion.color,
-              margin: "auto",
-              border: "1px solid #000",
-            }}
-          ></div>
-        </div>
-      )}
+    
     </div>
   );
 };

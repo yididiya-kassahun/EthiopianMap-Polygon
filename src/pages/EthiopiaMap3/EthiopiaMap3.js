@@ -16,17 +16,21 @@ const EthiopiaMap3 = () => {
     setRegions(regionsDataJson.data);
   }, []);
 
-  const handleRegionClick = (event) => {
-    const regionName = event.target.id;
-    const existingRegion = regions.find((r) => r.regionName === regionName);
-    const color = existingRegion ? existingRegion.color : "#000000";
+ const handleRegionClick = (event) => {
+   const regionName = event.target.id;
+   console.log("Clicked region:", regionName); // Debugging step
 
-    form.setFieldsValue(
-      existingRegion || { title: "", regionName, data: "", color }
-    );
+   const existingRegion = regions.find((r) => r.regionName === regionName);
+   console.log("Matched region:", existingRegion); // Debugging step
 
-    setModalVisible(true);
-  };
+   const color = existingRegion ? existingRegion.color : "#000000";
+
+   form.setFieldsValue({ title: "", regionName, data: "", color }
+   );
+
+   setModalVisible(true);
+ };
+
 
   const handleSave = () => {
     form.validateFields().then((values) => {
@@ -81,7 +85,7 @@ const EthiopiaMap3 = () => {
             >
               {regions.map((region) => (
                 <Option key={region.regionName} value={region.regionName}>
-                  {region.regionName}
+                  {region.regionName.replace(/3$/, "")}
                 </Option>
               ))}
             </Select>
@@ -114,7 +118,7 @@ const EthiopiaMap3 = () => {
             <Row gutter={24} align="middle gap-10">
               <p className="text-lg font-semibold text-gray-800">{title}</p>
               <p className="text-sm text-gray-600">
-                <strong>Region:</strong> {regionName}
+                <strong>Region:</strong> {regionName.replace(/3$/, "")}
               </p>
               <p className="flex items-center gap-2">
                 <strong>Data:</strong>

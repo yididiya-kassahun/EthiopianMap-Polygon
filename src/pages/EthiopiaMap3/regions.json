@@ -1,14 +1,14 @@
 {
   "data": [
-    { "title": "Population", "data": 43, "regionName": "oromiya3" },
-    { "title": "Population", "data": 65, "regionName": "amhara3" },
-    { "title": "Population", "data": 22, "regionName": "tigray3" },
-    { "title": "Population", "data": 56, "regionName": "afar3" },
-    { "title": "Population", "data": 45, "regionName": "addisababa3" },
-    { "title": "Population", "data": 33, "regionName": "snprl3" },
-    { "title": "Population", "data": 13, "regionName": "harar3" },
-    { "title": "Population", "data": 95, "regionName": "somalia3" },
-    { "title": "Population", "data": 58, "regionName": "gambella3" },
-    { "title": "Population", "data": 5, "regionName": "benishangul3" }
+    { "regionName": "oromiya3" },
+    { "regionName": "amhara3" },
+    { "regionName": "tigray3" },
+    { "regionName": "afar3" },
+    { "regionName": "addisababa3" },
+    { "regionName": "snpr3" },
+    { "regionName": "harar3" },
+    { "regionName": "somalia3" },
+    { "regionName": "gambella3" },
+    { "regionName": "benishangul3" }
   ]
 }

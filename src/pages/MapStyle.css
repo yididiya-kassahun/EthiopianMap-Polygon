@@ -1,5 +1,5 @@
 .map-container {
-  position: relative;
+  align-items: center;
   width: 600px;
   height: 600px;
 }
@@ -33,12 +33,12 @@
 }
 
 .cls-2 {
-  fill: #006b8f; 
+  fill: #006b8f;
   stroke: black;
-  stroke-width: .5px; 
-  transition: fill 0.3s ease; 
+  stroke-width: 0.5px;
+  transition: fill 0.3s ease;
 }
 
 .cls-2:hover {
-  fill: #006dbb72; 
+  fill: #006dbb72;
 }

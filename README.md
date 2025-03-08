@@ -1,4 +1,5 @@
 # Ethiopian Polygon Map 🇪🇹
+<img width="911" alt="Screenshot 2025-03-08 at 1 23 01 PM" src="https://github.com/user-attachments/assets/5ceb9bbc-1ff1-424d-945f-724ab3fd23f9" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
